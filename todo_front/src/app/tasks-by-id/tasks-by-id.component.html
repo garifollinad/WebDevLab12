@@ -1,0 +1,39 @@
+<app-main>
+  <ng-container>
+    <div class="container">
+      <div class="row" name="header">
+        <button type="button" class="btn btn-info btn-outline-info" style="color: aliceblue" (click)="navigateBack()">Go Back</button>
+        <span><h2>Task</h2></span>
+      </div>
+      <br>
+      <div name="body">
+        <table class="table table-bordered">
+          <tr>
+            <td>ID#</td>
+            <td>{{task.id}} </td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td><input type="text" class="form-control" [(ngModel)]="task.name"> </td>
+          </tr>
+          <tr>
+            <td>Created At</td>
+            <td>{{task.created_at | date:'yyyy-MM-dd HH:mm:ss'}} </td>
+          </tr>
+          <tr>
+            <td>Due on</td>
+            <td><input type="text" class="form-control" [(ngModel)]="task.due_on"> </td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td><input type="text" class="form-control" [(ngModel)]="task.status"> </td>
+          </tr>
+        </table>
+        <div class="pull-right">
+          <button type="button" class="btn btn-warning btn-sm" (click)="updateTask()">Update</button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteTask()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</app-main>
